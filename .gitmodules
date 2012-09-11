@@ -1,0 +1,9 @@
+[submodule "python/emacs-for-python"]
+	path = python/emacs-for-python
+	url = https://github.com/gabrielelanaro/emacs-for-python.git
+[submodule "python/flymake"]
+	path = python/flymake
+	url = https://github.com/akaihola/flymake-python.git
+[submodule "python/pony-mode"]
+	path = python/pony-mode
+	url = https://github.com/davidmiller/pony-mode.git
