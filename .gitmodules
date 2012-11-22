@@ -7,3 +7,6 @@
 [submodule "python/pony-mode"]
 	path = python/pony-mode
 	url = https://github.com/davidmiller/pony-mode.git
+[submodule "python/mako-mode"]
+	path = python/mako-mode
+	url = git://github.com/emacsmirror/mmm-mako.git

@@ -6,6 +6,9 @@
                    (or load-file-name (buffer-file-name))))
 (setq pythonEmacsDir (concat dotfiles-dir "python/"))
 (add-to-list `load-path pythonEmacsDir)
+(load (concat pythonEmacsDir "mako-mode/mmm-mako.el"))
+(add-to-list 'auto-mode-alist '("\\.mako\\'" . html-mode))
+(mmm-add-mode-ext-class 'html-mode "\\.mako\\'" 'mako)
 
 
 (load-file (concat pythonEmacsDir "emacs-for-python/epy-init.el"))
@@ -61,7 +64,7 @@
  
 (add-hook 'python-mode-hook 'python--add-debug-highlight)
  
-(defvar python--pdb-breakpoint-string "import ipdb; ipdb.set_trace() ## DEBUG ##"
+(defvar python--pdb-breakpoint-string "import pudb; pudb.set_trace() ## DEBUG ##"
   "Python breakpoint string used by `python-insert-breakpoint'")
  
 (defun python-insert-breakpoint ()

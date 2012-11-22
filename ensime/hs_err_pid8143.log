@@ -1,0 +1,781 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 32756 bytes for ChunkPool::allocate
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:222), pid=8143, tid=1195445056
+#
+# JRE version: 7.0_09-b30
+# Java VM: OpenJDK Server VM (23.2-b09 mixed mode linux-x86 )
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x47b96c00):  JavaThread "C2 CompilerThread1" daemon [_thread_in_vm, id=8152, stack(0x47390000,0x47411000)]
+
+Stack: [0x47390000,0x47411000]
+
+Current CompileTask:
+C2: 483946 1704             scala.tools.nsc.symtab.Types$Type::findMember (1009 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x45b54000 JavaThread "Scala Presentation Compiler []" daemon [_thread_in_vm, id=8171, stack(0x450ff000,0x45200000)]
+  0x4c2ef000 JavaThread "Timer-0" daemon [_thread_blocked, id=8166, stack(0x45ff4000,0x460f5000)]
+  0x46d69c00 JavaThread "ForkJoinScheduler" [_thread_blocked, id=8165, stack(0x460f5000,0x461f6000)]
+  0x46d68400 JavaThread "ForkJoinPool-1-worker-9" daemon [_thread_blocked, id=8164, stack(0x461f6000,0x462f7000)]
+  0x46d66800 JavaThread "ForkJoinPool-1-worker-8" daemon [_thread_in_native, id=8163, stack(0x462f7000,0x463f8000)]
+  0x46d65000 JavaThread "ForkJoinPool-1-worker-7" daemon [_thread_blocked, id=8162, stack(0x463f8000,0x464f9000)]
+  0x46d46400 JavaThread "ForkJoinPool-1-worker-6" daemon [_thread_blocked, id=8161, stack(0x464f9000,0x465fa000)]
+  0x46d44c00 JavaThread "ForkJoinPool-1-worker-5" daemon [_thread_blocked, id=8160, stack(0x465fa000,0x466fb000)]
+  0x46d52400 JavaThread "ForkJoinPool-1-worker-4" daemon [_thread_blocked, id=8159, stack(0x466fb000,0x467fc000)]
+  0x46d50c00 JavaThread "ForkJoinPool-1-worker-3" daemon [_thread_blocked, id=8158, stack(0x467fc000,0x468fd000)]
+  0x46d4a000 JavaThread "ForkJoinPool-1-worker-2" daemon [_thread_blocked, id=8157, stack(0x468fd000,0x469fe000)]
+  0x46d4d400 JavaThread "ForkJoinPool-1-worker-1" daemon [_thread_blocked, id=8156, stack(0x469fe000,0x46aff000)]
+  0x46d4cc00 JavaThread "ForkJoinPool-1-worker-0" daemon [_thread_blocked, id=8155, stack(0x46aff000,0x46c00000)]
+  0x47b98800 JavaThread "Service Thread" daemon [_thread_blocked, id=8153, stack(0x4728f000,0x47390000)]
+=>0x47b96c00 JavaThread "C2 CompilerThread1" daemon [_thread_in_vm, id=8152, stack(0x47390000,0x47411000)]
+  0x47b94c00 JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=8151, stack(0x47411000,0x47492000)]
+  0x47b93000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=8150, stack(0x47492000,0x47593000)]
+  0x47b50800 JavaThread "Finalizer" daemon [_thread_blocked, id=8149, stack(0x478fe000,0x479ff000)]
+  0x47b4e800 JavaThread "Reference Handler" daemon [_thread_blocked, id=8148, stack(0x479ff000,0x47b00000)]
+  0xb6406c00 JavaThread "main" [_thread_in_native, id=8144, stack(0xb65b6000,0xb66b7000)]
+
+Other Threads:
+  0x47b48400 VMThread [stack: 0x47c48000,0x47cc9000] [id=8147]
+  0x47b9a800 WatcherThread [stack: 0x4720e000,0x4728f000] [id=8154]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 436736K, used 237497K [0x93b00000, 0xb3300000, 0xb3300000)
+  eden space 365568K, 48% used [0x93b00000,0x9e7d1820,0xaa000000)
+  from space 71168K, 85% used [0xaed80000,0xb289cc78,0xb3300000)
+  to   space 75264K, 0% used [0xaa000000,0xaa000000,0xae980000)
+ ParOldGen       total 261760K, used 193790K [0x54b00000, 0x64aa0000, 0x93b00000)
+  object space 261760K, 74% used [0x54b00000,0x6083fb40,0x64aa0000)
+ PSPermGen       total 131072K, used 24447K [0x4cb00000, 0x54b00000, 0x54b00000)
+  object space 131072K, 18% used [0x4cb00000,0x4e2dfe90,0x54b00000)
+
+Card table byte_map: [0x4c7cb000,0x4cb00000] byte_map_base: 0x4c565800
+
+Polling page: 0xb773f000
+
+Code Cache  [0xb33c6000, 0xb3856000, 0xb63c6000)
+ total_blobs=1686 nmethods=1534 adapters=102 free_code_cache=44968Kb largest_free_block=45549696
+
+Compilation events (10 events):
+Event: 273,897 Thread 0x47b94c00 1699             org.objectweb.asm.commons.EmptyVisitor::visitIincInsn (1 bytes)
+Event: 273,898 Thread 0x47b94c00 nmethod 1699 0xb35c5f88 code [0xb35c6060, 0xb35c60b0]
+Event: 276,655 Thread 0x47b94c00 1700             java.util.LinkedHashMap$LinkedHashIterator::nextEntry (64 bytes)
+Event: 276,657 Thread 0x47b94c00 nmethod 1700 0xb357acc8 code [0xb357adc0, 0xb357ae90]
+Event: 276,788 Thread 0x47b96c00 1701             org.ensime.indexer.ClassFileIndex$$anonfun$1::apply (9 bytes)
+Event: 276,805 Thread 0x47b96c00 nmethod 1701 0xb357a508 code [0xb357a640, 0xb357a8a4]
+Event: 276,805 Thread 0x47b94c00 1702             org.ensime.indexer.ClassFileIndex$$anonfun$1::apply (13 bytes)
+Event: 276,816 Thread 0x47b94c00 nmethod 1702 0xb351c988 code [0xb351ca80, 0xb351cbf0]
+Event: 482,915 Thread 0x47b94c00 1703             scala.tools.nsc.symtab.Types$SingleType::underlying (104 bytes)
+Event: 483,721 Thread 0x47b96c00 1704             scala.tools.nsc.symtab.Types$Type::findMember (1009 bytes)
+
+GC Heap History (10 events):
+Event: 212,540 GC heap before
+{Heap before GC invocations=15 (full 1):
+ PSYoungGen      total 427648K, used 351296K [0x93b00000, 0xb3300000, 0xb3300000)
+  eden space 351296K, 100% used [0x93b00000,0xa9210000,0xa9210000)
+  from space 76352K, 0% used [0xa9210000,0xa9210000,0xadca0000)
+  to   space 73152K, 0% used [0xaeb90000,0xaeb90000,0xb3300000)
+ ParOldGen       total 261760K, used 146028K [0x54b00000, 0x64aa0000, 0x93b00000)
+  object space 261760K, 55% used [0x54b00000,0x5d99b390,0x64aa0000)
+ PSPermGen       total 131072K, used 23664K [0x4cb00000, 0x54b00000, 0x54b00000)
+  object space 131072K, 18% used [0x4cb00000,0x4e21c078,0x54b00000)
+Event: 212,803 GC heap after
+Heap after GC invocations=15 (full 1):
+ PSYoungGen      total 430784K, used 36033K [0x93b00000, 0xb2a40000, 0xb3300000)
+  eden space 366592K, 0% used [0x93b00000,0x93b00000,0xaa100000)
+  from space 64192K, 56% used [0xaeb90000,0xb0ec05c8,0xb2a40000)
+  to   space 70272K, 0% used [0xaa100000,0xaa100000,0xae5a0000)
+ ParOldGen       total 261760K, used 146028K [0x54b00000, 0x64aa0000, 0x93b00000)
+  object space 261760K, 55% used [0x54b00000,0x5d99b390,0x64aa0000)
+ PSPermGen       total 131072K, used 23664K [0x4cb00000, 0x54b00000, 0x54b00000)
+  object space 131072K, 18% used [0x4cb00000,0x4e21c078,0x54b00000)
+}
+Event: 227,497 GC heap before
+{Heap before GC invocations=16 (full 1):
+ PSYoungGen      total 430784K, used 402625K [0x93b00000, 0xb2a40000, 0xb3300000)
+  eden space 366592K, 100% used [0x93b00000,0xaa100000,0xaa100000)
+  from space 64192K, 56% used [0xaeb90000,0xb0ec05c8,0xb2a40000)
+  to   space 70272K, 0% used [0xaa100000,0xaa100000,0xae5a0000)
+ ParOldGen       total 261760K, used 146028K [0x54b00000, 0x64aa0000, 0x93b00000)
+  object space 261760K, 55% used [0x54b00000,0x5d99b390,0x64aa0000)
+ PSPermGen       total 131072K, used 24100K [0x4cb00000, 0x54b00000, 0x54b00000)
+  object space 131072K, 18% used [0x4cb00000,0x4e289250,0x54b00000)
+Event: 227,668 GC heap after
+Heap after GC invocations=16 (full 1):
+ PSYoungGen      total 436864K, used 43932K [0x93b00000, 0xb3300000, 0xb3300000)
+  eden space 366592K, 0% used [0x93b00000,0x93b00000,0xaa100000)
+  from space 70272K, 62% used [0xaa100000,0xacbe7350,0xae5a0000)
+  to   space 69056K, 0% used [0xaef90000,0xaef90000,0xb3300000)
+ ParOldGen       total 261760K, used 149167K [0x54b00000, 0x64aa0000, 0x93b00000)
+  object space 261760K, 56% used [0x54b00000,0x5dcabe80,0x64aa0000)
+ PSPermGen       total 131072K, used 24100K [0x4cb00000, 0x54b00000, 0x54b00000)
+  object space 131072K, 18% used [0x4cb00000,0x4e289250,0x54b00000)
+}
+Event: 238,495 GC heap before
+{Heap before GC invocations=17 (full 1):
+ PSYoungGen      total 436864K, used 410524K [0x93b00000, 0xb3300000, 0xb3300000)
+  eden space 366592K, 100% used [0x93b00000,0xaa100000,0xaa100000)
+  from space 70272K, 62% used [0xaa100000,0xacbe7350,0xae5a0000)
+  to   space 69056K, 0% used [0xaef90000,0xaef90000,0xb3300000)
+ ParOldGen       total 261760K, used 149167K [0x54b00000, 0x64aa0000, 0x93b00000)
+  object space 261760K, 56% used [0x54b00000,0x5dcabe80,0x64aa0000)
+ PSPermGen       total 131072K, used 24181K [0x4cb00000, 0x54b00000, 0x54b00000)
+  object space 131072K, 18% used [0x4cb00000,0x4e29d428,0x54b00000)
+Event: 238,634 GC heap after
+Heap after GC invocations=17 (full 1):
+ PSYoungGen      total 441152K, used 42789K [0x93b00000, 0xb2e70000, 0xb3300000)
+  eden space 376768K, 0% used [0x93b00000,0x93b00000,0xaaaf0000)
+  from space 64384K, 66% used [0xaef90000,0xb19596d0,0xb2e70000)
+  to   space 67328K, 0% used [0xaaaf0000,0xaaaf0000,0xaecb0000)
+ ParOldGen       total 261760K, used 154906K [0x54b00000, 0x64aa0000, 0x93b00000)
+  object space 261760K, 59% used [0x54b00000,0x5e2468b0,0x64aa0000)
+ PSPermGen       total 131072K, used 24181K [0x4cb00000, 0x54b00000, 0x54b00000)
+  object space 131072K, 18% used [0x4cb00000,0x4e29d428,0x54b00000)
+}
+Event: 267,947 GC heap before
+{Heap before GC invocations=18 (full 1):
+ PSYoungGen      total 441152K, used 419557K [0x93b00000, 0xb2e70000, 0xb3300000)
+  eden space 376768K, 100% used [0x93b00000,0xaaaf0000,0xaaaf0000)
+  from space 64384K, 66% used [0xaef90000,0xb19596d0,0xb2e70000)
+  to   space 67328K, 0% used [0xaaaf0000,0xaaaf0000,0xaecb0000)
+ ParOldGen       total 261760K, used 154906K [0x54b00000, 0x64aa0000, 0x93b00000)
+  object space 261760K, 59% used [0x54b00000,0x5e2468b0,0x64aa0000)
+ PSPermGen       total 131072K, used 24271K [0x4cb00000, 0x54b00000, 0x54b00000)
+  object space 131072K, 18% used [0x4cb00000,0x4e2b3d00,0x54b00000)
+Event: 269,830 GC heap after
+Heap after GC invocations=18 (full 1):
+ PSYoungGen      total 444096K, used 57413K [0x93b00000, 0xb3300000, 0xb3300000)
+  eden space 376768K, 0% used [0x93b00000,0x93b00000,0xaaaf0000)
+  from space 67328K, 85% used [0xaaaf0000,0xae301620,0xaecb0000)
+  to   space 71168K, 0% used [0xaed80000,0xaed80000,0xb3300000)
+ ParOldGen       total 261760K, used 185583K [0x54b00000, 0x64aa0000, 0x93b00000)
+  object space 261760K, 70% used [0x54b00000,0x6003bc70,0x64aa0000)
+ PSPermGen       total 131072K, used 24271K [0x4cb00000, 0x54b00000, 0x54b00000)
+  object space 131072K, 18% used [0x4cb00000,0x4e2b3d00,0x54b00000)
+}
+Event: 278,236 GC heap before
+{Heap before GC invocations=19 (full 1):
+ PSYoungGen      total 444096K, used 434181K [0x93b00000, 0xb3300000, 0xb3300000)
+  eden space 376768K, 100% used [0x93b00000,0xaaaf0000,0xaaaf0000)
+  from space 67328K, 85% used [0xaaaf0000,0xae301620,0xaecb0000)
+  to   space 71168K, 0% used [0xaed80000,0xaed80000,0xb3300000)
+ ParOldGen       total 261760K, used 185583K [0x54b00000, 0x64aa0000, 0x93b00000)
+  object space 261760K, 70% used [0x54b00000,0x6003bc70,0x64aa0000)
+ PSPermGen       total 131072K, used 24273K [0x4cb00000, 0x54b00000, 0x54b00000)
+  object space 131072K, 18% used [0x4cb00000,0x4e2b46c8,0x54b00000)
+Event: 278,641 GC heap after
+Heap after GC invocations=19 (full 1):
+ PSYoungGen      total 436736K, used 60531K [0x93b00000, 0xb3300000, 0xb3300000)
+  eden space 365568K, 0% used [0x93b00000,0x93b00000,0xaa000000)
+  from space 71168K, 85% used [0xaed80000,0xb289cc78,0xb3300000)
+  to   space 75264K, 0% used [0xaa000000,0xaa000000,0xae980000)
+ ParOldGen       total 261760K, used 193790K [0x54b00000, 0x64aa0000, 0x93b00000)
+  object space 261760K, 74% used [0x54b00000,0x6083fb40,0x64aa0000)
+ PSPermGen       total 131072K, used 24273K [0x4cb00000, 0x54b00000, 0x54b00000)
+  object space 131072K, 18% used [0x4cb00000,0x4e2b46c8,0x54b00000)
+}
+
+Deoptimization events (10 events):
+Event: 477,733 Thread 0x45b54000 Uncommon trap -34 fr.pc 0xb35aca3c
+Event: 477,958 Thread 0x45b54000 Uncommon trap -34 fr.pc 0xb35aca3c
+Event: 477,958 Thread 0x45b54000 Uncommon trap -34 fr.pc 0xb35aca3c
+Event: 477,958 Thread 0x45b54000 Uncommon trap -34 fr.pc 0xb35aca3c
+Event: 478,606 Thread 0x45b54000 Uncommon trap -34 fr.pc 0xb36fe704
+Event: 481,218 Thread 0x45b54000 Uncommon trap -34 fr.pc 0xb36fe704
+Event: 482,689 Thread 0x45b54000 Uncommon trap -34 fr.pc 0xb36d6ef8
+Event: 482,689 Thread 0x45b54000 Uncommon trap -34 fr.pc 0xb36d6ef8
+Event: 482,689 Thread 0x45b54000 Uncommon trap -34 fr.pc 0xb36d6ef8
+Event: 483,730 Thread 0x45b54000 Uncommon trap -58 fr.pc 0xb35367ac
+
+Internal exceptions (10 events):
+Event: 482,221 Thread 0x45b54000 Threw 0x9e6e26a8 at /build/buildd/openjdk-7-7u9-2.3.3/build/openjdk/hotspot/src/share/vm/prims/jvm.cpp:1166
+Event: 482,223 Thread 0x45b54000 Threw 0x9e6e80f8 at /build/buildd/openjdk-7-7u9-2.3.3/build/openjdk/hotspot/src/share/vm/prims/jvm.cpp:1166
+Event: 482,356 Thread 0x45b54000 Threw 0x9e6f55f0 at /build/buildd/openjdk-7-7u9-2.3.3/build/openjdk/hotspot/src/share/vm/prims/jvm.cpp:1166
+Event: 482,551 Thread 0x45b54000 Threw 0x9e6fb438 at /build/buildd/openjdk-7-7u9-2.3.3/build/openjdk/hotspot/src/share/vm/prims/jvm.cpp:1166
+Event: 482,586 Thread 0x45b54000 Threw 0x9e7005a8 at /build/buildd/openjdk-7-7u9-2.3.3/build/openjdk/hotspot/src/share/vm/prims/jvm.cpp:1166
+Event: 482,612 Thread 0x45b54000 Threw 0x9e704898 at /build/buildd/openjdk-7-7u9-2.3.3/build/openjdk/hotspot/src/share/vm/prims/jvm.cpp:1166
+Event: 482,633 Thread 0x45b54000 Threw 0x9e7092a0 at /build/buildd/openjdk-7-7u9-2.3.3/build/openjdk/hotspot/src/share/vm/prims/jvm.cpp:1166
+Event: 482,652 Thread 0x45b54000 Threw 0x9e70d8c8 at /build/buildd/openjdk-7-7u9-2.3.3/build/openjdk/hotspot/src/share/vm/prims/jvm.cpp:1166
+Event: 482,653 Thread 0x45b54000 Threw 0x9e712750 at /build/buildd/openjdk-7-7u9-2.3.3/build/openjdk/hotspot/src/share/vm/prims/jvm.cpp:1166
+Event: 482,655 Thread 0x45b54000 Threw 0x9e718f88 at /build/buildd/openjdk-7-7u9-2.3.3/build/openjdk/hotspot/src/share/vm/prims/jvm.cpp:1166
+
+Events (10 events):
+Event: 482,653 loading class 0x46cc8070
+Event: 482,653 loading class 0x46cc8070 done
+Event: 482,655 loading class 0x46cc7ec0
+Event: 482,655 loading class 0x46cc7ec0 done
+Event: 482,689 Thread 0x45b54000 DEOPT PACKING pc=0xb36d6ef8 sp=0x451feac0
+Event: 482,689 Thread 0x45b54000 DEOPT UNPACKING pc=0xb33f3efc sp=0x451feab0 mode 2
+Event: 482,689 Thread 0x45b54000 DEOPT PACKING pc=0xb36d6ef8 sp=0x451feac0
+Event: 482,689 Thread 0x45b54000 DEOPT UNPACKING pc=0xb33f3efc sp=0x451feab0 mode 2
+Event: 482,689 Thread 0x45b54000 DEOPT PACKING pc=0xb36d6ef8 sp=0x451feac0
+Event: 482,689 Thread 0x45b54000 DEOPT UNPACKING pc=0xb33f3efc sp=0x451feab0 mode 2
+
+
+Dynamic libraries:
+00017000-01ee8000 rw-p 00000000 00:00 0 
+01ee9000-02199000 rw-p 00000000 00:00 0 
+0219a000-04c97000 rw-p 00000000 00:00 0 
+04c98000-06170000 rw-p 00000000 00:00 0 
+06171000-08048000 rw-p 00000000 00:00 0 
+08048000-08049000 r-xp 00000000 08:02 2887393    /usr/lib/jvm/java-7-openjdk-i386/jre/bin/java
+08049000-0804a000 r--p 00000000 08:02 2887393    /usr/lib/jvm/java-7-openjdk-i386/jre/bin/java
+0804a000-0804b000 rw-p 00001000 08:02 2887393    /usr/lib/jvm/java-7-openjdk-i386/jre/bin/java
+0804c000-425ff000 rw-p 00000000 00:00 0          [heap]
+42600000-426ff000 rw-p 00000000 00:00 0 
+426ff000-42700000 ---p 00000000 00:00 0 
+42700000-42800000 rw-p 00000000 00:00 0 
+42800000-429f0000 rw-p 00000000 00:00 0 
+429f0000-42a00000 ---p 00000000 00:00 0 
+42a00000-42c00000 rw-p 00000000 00:00 0 
+42c00000-42dfc000 rw-p 00000000 00:00 0 
+42dfc000-42e00000 ---p 00000000 00:00 0 
+42e00000-43000000 rw-p 00000000 00:00 0 
+43000000-43200000 rw-p 00000000 00:00 0 
+43200000-43400000 rw-p 00000000 00:00 0 
+43400000-43600000 rw-p 00000000 00:00 0 
+43600000-43800000 rw-p 00000000 00:00 0 
+43800000-439fe000 rw-p 00000000 00:00 0 
+439fe000-43a00000 ---p 00000000 00:00 0 
+43a00000-43b00000 rw-p 00000000 00:00 0 
+43b00000-43d00000 rw-p 00000000 00:00 0 
+43d00000-43de0000 rw-p 00000000 00:00 0 
+43de0000-43e00000 ---p 00000000 00:00 0 
+43e00000-43efc000 rw-p 00000000 00:00 0 
+43efc000-43f00000 ---p 00000000 00:00 0 
+43f00000-44100000 rw-p 00000000 00:00 0 
+44100000-44300000 rw-p 00000000 00:00 0 
+44300000-443fa000 rw-p 00000000 00:00 0 
+443fa000-44400000 ---p 00000000 00:00 0 
+44400000-44500000 rw-p 00000000 00:00 0 
+44500000-445fe000 rw-p 00000000 00:00 0 
+445fe000-44600000 ---p 00000000 00:00 0 
+44600000-44700000 rw-p 00000000 00:00 0 
+44700000-447ea000 rw-p 00000000 00:00 0 
+447ea000-44800000 ---p 00000000 00:00 0 
+44800000-44a00000 rw-p 00000000 00:00 0 
+44a00000-44afa000 rw-p 00000000 00:00 0 
+44afa000-44b00000 ---p 00000000 00:00 0 
+44b00000-44be8000 rw-p 00000000 00:00 0 
+44be8000-44c00000 ---p 00000000 00:00 0 
+44c00000-44cff000 rw-p 00000000 00:00 0 
+44cff000-44d00000 ---p 00000000 00:00 0 
+44d00000-44dfa000 rw-p 00000000 00:00 0 
+44dfa000-44e00000 ---p 00000000 00:00 0 
+44e00000-44eff000 rw-p 00000000 00:00 0 
+44eff000-44f00000 ---p 00000000 00:00 0 
+44f00000-44fd4000 rw-p 00000000 00:00 0 
+44fd4000-45000000 ---p 00000000 00:00 0 
+45000000-450ff000 rw-p 00000000 00:00 0 
+450ff000-45102000 ---p 00000000 00:00 0 
+45102000-45200000 rw-p 00000000 00:00 0          [stack:8171]
+45200000-452f1000 rw-p 00000000 00:00 0 
+452f1000-45300000 ---p 00000000 00:00 0 
+45300000-453fc000 rw-p 00000000 00:00 0 
+453fc000-45400000 ---p 00000000 00:00 0 
+45400000-45500000 rw-p 00000000 00:00 0 
+45501000-4551e000 rw-p 00000000 00:00 0 
+4551e000-4552b000 r--s 00107000 08:02 2246704    /usr/lib/jvm/java-7-openjdk-common/jre/lib/rhino.jar
+4552b000-45536000 r--s 001fb000 08:02 2246703    /usr/lib/jvm/java-7-openjdk-common/jre/lib/charsets.jar
+45536000-45547000 r-xp 00000000 08:02 786713     /usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/libnio.so
+45547000-45548000 r--p 00010000 08:02 786713     /usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/libnio.so
+45548000-45549000 rw-p 00011000 08:02 786713     /usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/libnio.so
+45549000-4559f000 r--s 003fb000 08:03 6423396    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/play/play_2.10/2.1-RC1/jars/play_2.10.jar
+4559f000-455a7000 r--s 00051000 08:03 5899640    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/ch.qos.logback/logback-core/1.0.7/jars/logback-core.jar
+455a7000-455a9000 r--s 00011000 08:03 6292498    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.hamcrest/hamcrest-core/1.1/jars/hamcrest-core.jar
+455a9000-4561a000 r--s 003d4000 08:03 6423054    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.specs2/specs2-scalaz-core_2.10.0-RC1/6.0.1/jars/specs2-scalaz-core_2.10.0-RC1.jar
+4561a000-45624000 r--s 00064000 08:03 6423115    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.springframework/spring-core/3.1.2.RELEASE/jars/spring-core.jar
+45624000-45626000 r--s 00005000 08:03 6292267    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.apache.httpcomponents/httpmime/4.1.2/jars/httpmime.jar
+45626000-45628000 r--s 0000d000 08:03 5900092    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/commons-logging/commons-logging/1.1.1/jars/commons-logging.jar
+45628000-4562a000 r--s 00006000 08:03 5899749    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/com.google.code.findbugs/jsr305/2.0.1/jars/jsr305.jar
+4562a000-4562d000 r--s 00017000 08:03 6292653    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.reflections/reflections/0.9.8/jars/reflections.jar
+4562d000-4562e000 r--s 00001000 08:03 6422986    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.slf4j/jul-to-slf4j/1.6.6/jars/jul-to-slf4j.jar
+4562e000-45635000 r--s 0003b000 08:03 6423150    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.yaml/snakeyaml/1.10/bundles/snakeyaml.jar
+45635000-45637000 r--s 00001000 08:03 6423453    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/play/sbt-link/2.1-RC1/jars/sbt-link.jar
+45637000-4563f000 r--s 00040000 08:03 6292193    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.apache.httpcomponents/httpclient/4.0.1/jars/httpclient.jar
+4563f000-45645000 r--s 00033000 08:03 5900028    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/commons-codec/commons-codec/1.6/jars/commons-codec.jar
+45645000-456b8000 r--s 00596000 08:03 6423074    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.specs2/specs2_2.10.0-RC1/1.12.2/jars/specs2_2.10.0-RC1.jar
+456b8000-456c1000 r--s 00098000 08:03 6292543    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.javassist/javassist/3.16.1-GA/jars/javassist.jar
+456c1000-456c3000 r--s 00010000 08:03 5899864    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/com.jsuereth/scala-arm_2.10.0-RC1/1.2/jars/scala-arm_2.10.0-RC1.jar
+456c3000-456cb000 r--s 00028000 08:03 6423583    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/xml-apis/xml-apis/1.3.04/jars/xml-apis.jar
+456cb000-456d4000 r--s 0006c000 08:03 5899875    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/com.ning/async-http-client/1.7.6/jars/async-http-client.jar
+456d4000-456d7000 r--s 00041000 08:03 6423551    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/xalan/serializer/2.7.1/jars/serializer.jar
+456d7000-456d9000 r--s 00008000 08:03 6292588    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.joda/joda-convert/1.2/jars/joda-convert.jar
+456d9000-456db000 r--s 00008000 08:03 6423507    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/play/templates_2.10/2.1-RC1/jars/templates_2.10.jar
+456db000-456dd000 r--s 00002000 08:03 6292470    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.fluentlenium/fluentlenium-festassert/0.7.3/jars/fluentlenium-festassert.jar
+456dd000-456e4000 r--s 00049000 08:03 5899619    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/cglib/cglib-nodep/2.1_3/jars/cglib-nodep.jar
+456e4000-456e7000 r--s 00012000 08:03 6029335    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/javax.servlet/javax.servlet-api/3.0.1/jars/javax.servlet-api.jar
+456e7000-456ed000 r--s 00048000 08:03 6292151    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.apache.commons/commons-lang3/3.1/jars/commons-lang3.jar
+456ed000-456f3000 r--s 0002c000 08:03 6422929    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.seleniumhq.selenium/selenium-java/2.25.0/jars/selenium-java.jar
+456f3000-456f5000 r--s 0001b000 08:03 6423375    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/play/play-test_2.10/2.1-RC1/jars/play-test_2.10.jar
+456f5000-45700000 r--s 000d5000 08:03 6292010    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/net.java.dev.jna/platform/3.4.0/jars/platform.jar
+45700000-45703000 r--s 00047000 08:03 6422859    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.seleniumhq.selenium/selenium-android-driver/2.25.0/jars/selenium-android-driver.jar
+45703000-45704000 r--s 00001000 08:03 6292087    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/oauth.signpost/signpost-commonshttp4/1.2.1.2/jars/signpost-commonshttp4.jar
+45704000-4573c000 r--s 002f1000 08:03 6292727    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.scala-lang/scala-reflect/2.10.0-RC1/jars/scala-reflect.jar
+4573c000-45741000 r--s 00041000 08:03 5900072    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/commons-lang/commons-lang/2.6/jars/commons-lang.jar
+45741000-45743000 r--s 00000000 08:03 6423228    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/play/play-exceptions/2.1-RC1/jars/play-exceptions.jar
+45743000-4574f000 r--s 00085000 08:03 6423095    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.springframework/spring-beans/3.1.2.RELEASE/jars/spring-beans.jar
+4574f000-45752000 r--s 00009000 08:03 6029357    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/javax.validation/validation-api/1.0.0.GA/jars/validation-api.jar
+45752000-4576a000 r--s 00115000 08:03 6423572    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/xerces/xercesImpl/2.9.1/jars/xercesImpl.jar
+4576a000-45880000 r--s 00d55000 08:03 6553754    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/framework/sbt/boot/scala-2.10.0-RC1/lib/scala-compiler.jar
+45880000-45895000 r--s 000b7000 08:03 6423105    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.springframework/spring-context/3.1.2.RELEASE/jars/spring-context.jar
+45895000-458b9000 r--s 001aa000 08:03 5899778    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/com.google.guava/guava/13.0.1/jars/guava.jar
+458b9000-458cf000 r--s 000fe000 08:03 5900099    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/io.netty/netty/3.5.9.Final/bundles/netty.jar
+458cf000-458d7000 r--s 0004e000 08:03 6292202    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.apache.httpcomponents/httpclient/4.1.2/jars/httpclient.jar
+458d7000-458f4000 r--s 001af000 08:03 5899944    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/com.typesafe.akka/akka-actor_2.10.0-RC1/2.1.0-RC1/bundles/akka-actor_2.10.0-RC1.jar
+458f4000-45904000 r--s 000b4000 08:03 6292573    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.jboss.netty/netty/3.2.7.Final/bundles/netty.jar
+45904000-4590b000 r--s 00058000 08:03 5899709    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/com.github.scala-incubator.io/scala-io-file_2.10.0-RC1/0.4.1/jars/scala-io-file_2.10.0-RC1.jar
+4590b000-45917000 r--s 00069000 08:03 6292515    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.hibernate/hibernate-validator/4.3.0.Final/jars/hibernate-validator.jar
+45917000-4591c000 r--s 0001b000 08:03 6422869    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.seleniumhq.selenium/selenium-api/2.25.0/jars/selenium-api.jar
+4591c000-45921000 r--s 00035000 08:03 6422945    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.seleniumhq.selenium/selenium-remote-driver/2.25.0/jars/selenium-remote-driver.jar
+45921000-45923000 r--s 0000d000 08:03 6292566    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.jboss.logging/jboss-logging/3.1.0.CR2/jars/jboss-logging.jar
+45923000-45925000 r--s 00002000 08:03 6422919    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.seleniumhq.selenium/selenium-iphone-driver/2.25.0/jars/selenium-iphone-driver.jar
+45925000-45998000 r--s 00653000 08:03 6553755    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/framework/sbt/boot/scala-2.10.0-RC1/lib/scala-library.jar
+45998000-4599a000 r--s 00008000 08:03 6292599    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.json/json/20080701/jars/json.jar
+4599a000-4599c000 r--s 0015b000 08:03 6422909    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.seleniumhq.selenium/selenium-ie-driver/2.25.0/jars/selenium-ie-driver.jar
+4599c000-4599e000 r--s 001e1000 08:03 6422889    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.seleniumhq.selenium/selenium-firefox-driver/2.25.0/jars/selenium-firefox-driver.jar
+4599e000-459a0000 r--s 00006000 08:03 6292432    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.easytesting/fest-util/1.1.6/jars/fest-util.jar
+459a0000-459b1000 r--s 000e4000 08:03 6292049    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/net.sourceforge.htmlunit/htmlunit/2.9/jars/htmlunit.jar
+459b1000-459b7000 r--s 00042000 08:03 6423165    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/play/anorm_2.10/2.1-RC1/jars/anorm_2.10.jar
+459b7000-459d2000 r--s 0012b000 08:03 6292021    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/net.sf.ehcache/ehcache-core/2.6.0/jars/ehcache-core.jar
+459d2000-459d4000 r--s 00003000 08:03 6422976    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.slf4j/jcl-over-slf4j/1.6.6/jars/jcl-over-slf4j.jar
+459d4000-459f9000 r--s 002e3000 08:03 6423561    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/xalan/xalan/2.7.1/jars/xalan.jar
+459f9000-459fb000 r--s 00015000 08:03 6423333    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/play/play-java_2.10/2.1-RC1/jars/play-java_2.10.jar
+459fb000-45a00000 r--s 0002b000 08:03 6423354    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/play/play-jdbc_2.10/2.1-RC1/jars/play-jdbc_2.10.jar
+45a00000-45afd000 rw-p 00000000 00:00 0 
+45afd000-45b00000 ---p 00000000 00:00 0 
+45b00000-45be6000 rw-p 00000000 00:00 0 
+45be6000-45c00000 ---p 00000000 00:00 0 
+45c00000-45cfe000 rw-p 00000000 00:00 0 
+45cfe000-45d00000 ---p 00000000 00:00 0 
+45d00000-45d02000 r--s 0000b000 08:03 6292141    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.apache.commons/commons-exec/1.1/jars/commons-exec.jar
+45d02000-45d07000 r--s 00028000 08:03 6292257    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.apache.httpcomponents/httpcore/4.1.3/jars/httpcore.jar
+45d07000-45d0f000 r--s 0008d000 08:03 6422804    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.scala-stm/scala-stm_2.10.0-RC1/0.6/jars/scala-stm_2.10.0-RC1.jar
+45d0f000-45d13000 r--s 00022000 08:03 6423143    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.webbitserver/webbit/0.4.6/jars/webbit.jar
+45d13000-45d16000 r--s 0003b000 08:03 6292038    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/net.sourceforge.cssparser/cssparser/0.9.5/jars/cssparser.jar
+45d16000-45d1a000 r--s 000f3000 08:03 6292000    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/net.java.dev.jna/jna/3.4.0/jars/jna.jar
+45d1a000-45d1e000 r--s 00018000 08:03 6422965    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.seleniumhq.selenium/selenium-support/2.25.0/jars/selenium-support.jar
+45d1e000-45d2e000 r--s 0007c000 08:03 6291860    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/joda-time/joda-time/2.1/jars/joda-time.jar
+45d2e000-45d3d000 r--s 000b0000 08:03 6292405    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.codehaus.jackson/jackson-mapper-asl/1.9.10/jars/jackson-mapper-asl.jar
+45d3d000-45d42000 r--s 00026000 08:03 6292239    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.apache.httpcomponents/httpcore/4.0.1/jars/httpcore.jar
+45d42000-45d45000 r--s 00022000 08:03 6292070    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/net.sourceforge.nekohtml/nekohtml/1.9.15/jars/nekohtml.jar
+45d45000-45d47000 r--s 00005000 08:03 6423010    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.slf4j/slf4j-api/1.7.2/jars/slf4j-api.jar
+45d47000-45d4a000 r--s 00010000 08:03 6292460    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.fluentlenium/fluentlenium-core/0.7.3/jars/fluentlenium-core.jar
+45d4a000-45d4c000 r--s 0000a000 08:03 5900010    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/commons-codec/commons-codec/1.3/jars/commons-codec.jar
+45d4c000-45d5a000 r--s 000e1000 08:03 6292059    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/net.sourceforge.htmlunit/htmlunit-core-js/2.9/jars/htmlunit-core-js.jar
+45d5a000-45d5c000 r--s 0000c000 08:03 6422899    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.seleniumhq.selenium/selenium-htmlunit-driver/2.25.0/jars/selenium-htmlunit-driver.jar
+45d5c000-45d61000 r--s 0002d000 08:03 6423540    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/tyrex/tyrex/1.0.1/jars/tyrex.jar
+45d61000-45d75000 r--s 00124000 08:03 5899679    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/com.github.scala-incubator.io/scala-io-core_2.10.0-RC1/0.4.1/jars/scala-io-core_2.10.0-RC1.jar
+45d75000-45d92000 r-xp 00000000 08:02 1049555    /lib/i386-linux-gnu/libselinux.so.1
+45d92000-45d93000 r--p 0001c000 08:02 1049555    /lib/i386-linux-gnu/libselinux.so.1
+45d93000-45d94000 rw-p 0001d000 08:02 1049555    /lib/i386-linux-gnu/libselinux.so.1
+45d94000-45d97000 r-xp 00000000 08:02 1966466    /usr/lib/i386-linux-gnu/libgmodule-2.0.so.0.3400.0
+45d97000-45d98000 r--p 00002000 08:02 1966466    /usr/lib/i386-linux-gnu/libgmodule-2.0.so.0.3400.0
+45d98000-45d99000 rw-p 00003000 08:02 1966466    /usr/lib/i386-linux-gnu/libgmodule-2.0.so.0.3400.0
+45d99000-45e92000 r-xp 00000000 08:02 1049437    /lib/i386-linux-gnu/libglib-2.0.so.0.3400.0
+45e92000-45e93000 r--p 000f9000 08:02 1049437    /lib/i386-linux-gnu/libglib-2.0.so.0.3400.0
+45e93000-45e94000 rw-p 000fa000 08:02 1049437    /lib/i386-linux-gnu/libglib-2.0.so.0.3400.0
+45e94000-45fef000 r-xp 00000000 08:02 1966471    /usr/lib/i386-linux-gnu/libgio-2.0.so.0.3400.0
+45fef000-45ff0000 ---p 0015b000 08:02 1966471    /usr/lib/i386-linux-gnu/libgio-2.0.so.0.3400.0
+45ff0000-45ff2000 r--p 0015b000 08:02 1966471    /usr/lib/i386-linux-gnu/libgio-2.0.so.0.3400.0
+45ff2000-45ff3000 rw-p 0015d000 08:02 1966471    /usr/lib/i386-linux-gnu/libgio-2.0.so.0.3400.0
+45ff3000-45ff4000 rw-p 00000000 00:00 0 
+45ff4000-45ff7000 ---p 00000000 00:00 0 
+45ff7000-460f5000 rw-p 00000000 00:00 0          [stack:8166]
+460f5000-460f8000 ---p 00000000 00:00 0 
+460f8000-461f6000 rw-p 00000000 00:00 0          [stack:8165]
+461f6000-461f9000 ---p 00000000 00:00 0 
+461f9000-462f7000 rw-p 00000000 00:00 0          [stack:8164]
+462f7000-462fa000 ---p 00000000 00:00 0 
+462fa000-463f8000 rw-p 00000000 00:00 0          [stack:8163]
+463f8000-463fb000 ---p 00000000 00:00 0 
+463fb000-464f9000 rw-p 00000000 00:00 0          [stack:8162]
+464f9000-464fc000 ---p 00000000 00:00 0 
+464fc000-465fa000 rw-p 00000000 00:00 0          [stack:8161]
+465fa000-465fd000 ---p 00000000 00:00 0 
+465fd000-466fb000 rw-p 00000000 00:00 0          [stack:8160]
+466fb000-466fe000 ---p 00000000 00:00 0 
+466fe000-467fc000 rw-p 00000000 00:00 0          [stack:8159]
+467fc000-467ff000 ---p 00000000 00:00 0 
+467ff000-468fd000 rw-p 00000000 00:00 0          [stack:8158]
+468fd000-46900000 ---p 00000000 00:00 0 
+46900000-469fe000 rw-p 00000000 00:00 0          [stack:8157]
+469fe000-46a01000 ---p 00000000 00:00 0 
+46a01000-46aff000 rw-p 00000000 00:00 0          [stack:8156]
+46aff000-46b02000 ---p 00000000 00:00 0 
+46b02000-46c00000 rw-p 00000000 00:00 0          [stack:8155]
+46c00000-46cfd000 rw-p 00000000 00:00 0 
+46cfd000-46d00000 ---p 00000000 00:00 0 
+46d00000-46de6000 rw-p 00000000 00:00 0 
+46de6000-46e00000 ---p 00000000 00:00 0 
+46e00000-46efb000 rw-p 00000000 00:00 0 
+46efb000-46f00000 ---p 00000000 00:00 0 
+46f01000-46f03000 rw-p 00000000 00:00 0 
+46f03000-46f04000 r--s 00000000 08:02 2246715    /usr/lib/jvm/java-7-openjdk-common/jre/lib/compilefontconfig.jar
+46f04000-46f08000 r--s 0002a000 08:03 5899893    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/com.typesafe/config/1.0.0/bundles/config.jar
+46f08000-46f0e000 r--s 00038000 08:03 5899630    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/ch.qos.logback/logback-classic/1.0.7/jars/logback-classic.jar
+46f0e000-46f1c000 r--s 0007f000 08:03 5900039    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/commons-collections/commons-collections/3.2.1/jars/commons-collections.jar
+46f1c000-46f2b000 r--s 0008d000 08:03 6423249    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/play/play-iteratees_2.10/2.1-RC1/jars/play-iteratees_2.10.jar
+46f2b000-46f69000 r-xp 00000000 08:02 1048646    /lib/i386-linux-gnu/libpcre.so.3.13.1
+46f69000-46f6a000 r--p 0003d000 08:02 1048646    /lib/i386-linux-gnu/libpcre.so.3.13.1
+46f6a000-46f6b000 rw-p 0003e000 08:02 1048646    /lib/i386-linux-gnu/libpcre.so.3.13.1
+46f6b000-46fb9000 r-xp 00000000 08:02 1966443    /usr/lib/i386-linux-gnu/libgobject-2.0.so.0.3400.0
+46fb9000-46fba000 r--p 0004d000 08:02 1966443    /usr/lib/i386-linux-gnu/libgobject-2.0.so.0.3400.0
+46fba000-46fbb000 rw-p 0004e000 08:02 1966443    /usr/lib/i386-linux-gnu/libgobject-2.0.so.0.3400.0
+46fbb000-47039000 r--s 007f5000 08:03 5900153    /home/peter/.emacs.d/ensime/lib/scala-library.jar
+47039000-47100000 r--s 00a25000 08:03 5900152    /home/peter/.emacs.d/ensime/lib/scala-compiler.jar
+47100000-471fe000 rw-p 00000000 00:00 0 
+471fe000-47200000 ---p 00000000 00:00 0 
+47200000-47201000 r--s 0000a000 08:02 2244211    /usr/lib/jvm/java-7-openjdk-common/jre/lib/javazic.jar
+47201000-47202000 r--s 00000000 08:02 2246717    /usr/lib/jvm/java-7-openjdk-common/jre/lib/management-agent.jar
+47202000-47205000 r--s 00024000 08:03 5900061    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/commons-io/commons-io/2.0.1/jars/commons-io.jar
+47205000-47208000 r--s 00011000 08:03 6292422    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.easytesting/fest-assert/1.4/jars/fest-assert.jar
+47208000-4720c000 r--s 00035000 08:03 6292395    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.codehaus.jackson/jackson-core-asl/1.9.10/jars/jackson-core-asl.jar
+4720c000-4720e000 r--s 0001b000 08:03 5899843    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/com.jolbox/bonecp/0.7.1.RELEASE/bundles/bonecp.jar
+4720e000-4720f000 ---p 00000000 00:00 0 
+4720f000-4728f000 rw-p 00000000 00:00 0          [stack:8154]
+4728f000-47292000 ---p 00000000 00:00 0 
+47292000-47390000 rw-p 00000000 00:00 0          [stack:8153]
+47390000-47393000 ---p 00000000 00:00 0 
+47393000-47411000 rw-p 00000000 00:00 0          [stack:8152]
+47411000-47414000 ---p 00000000 00:00 0 
+47414000-47492000 rw-p 00000000 00:00 0          [stack:8151]
+47492000-47495000 ---p 00000000 00:00 0 
+47495000-47593000 rw-p 00000000 00:00 0          [stack:8150]
+47593000-476fe000 r--p 006e8000 08:02 1973544    /usr/lib/locale/locale-archive
+476fe000-478fe000 r--p 00000000 08:02 1973544    /usr/lib/locale/locale-archive
+478fe000-47901000 ---p 00000000 00:00 0 
+47901000-479ff000 rw-p 00000000 00:00 0          [stack:8149]
+479ff000-47a02000 ---p 00000000 00:00 0 
+47a02000-47b00000 rw-p 00000000 00:00 0          [stack:8148]
+47b00000-47bfb000 rw-p 00000000 00:00 0 
+47bfb000-47c00000 ---p 00000000 00:00 0 
+47c00000-47c01000 r--s 00003000 08:03 6423132    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.w3c.css/sac/1.3/jars/sac.jar
+47c01000-47c08000 r--s 00033000 08:03 6291890    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/junit/junit-dep/4.10/jars/junit-dep.jar
+47c08000-47c12000 r--s 0012f000 08:03 5899816    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/com.h2database/h2/1.3.168/jars/h2.jar
+47c12000-47c17000 r-xp 00000000 08:02 1966167    /usr/lib/i386-linux-gnu/libffi.so.6.0.0
+47c17000-47c18000 r--p 00005000 08:02 1966167    /usr/lib/i386-linux-gnu/libffi.so.6.0.0
+47c18000-47c19000 rw-p 00006000 08:02 1966167    /usr/lib/i386-linux-gnu/libffi.so.6.0.0
+47c19000-47c2c000 r-xp 00000000 08:02 1048797    /lib/i386-linux-gnu/libresolv-2.15.so
+47c2c000-47c2d000 r--p 00013000 08:02 1048797    /lib/i386-linux-gnu/libresolv-2.15.so
+47c2d000-47c2e000 rw-p 00014000 08:02 1048797    /lib/i386-linux-gnu/libresolv-2.15.so
+47c2e000-47c30000 rw-p 00000000 00:00 0 
+47c30000-47c46000 r-xp 00000000 08:02 786722     /usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/libnet.so
+47c46000-47c47000 r--p 00015000 08:02 786722     /usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/libnet.so
+47c47000-47c48000 rw-p 00016000 08:02 786722     /usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/libnet.so
+47c48000-47c49000 ---p 00000000 00:00 0 
+47c49000-47d11000 rw-p 00000000 00:00 0          [stack:8147]
+47d11000-47ebc000 r--s 01cdb000 08:02 787382     /usr/lib/jvm/java-7-openjdk-i386/jre/lib/rt.jar
+47ebc000-4c200000 rw-p 00000000 00:00 0 
+4c200000-4c2fc000 rw-p 00000000 00:00 0 
+4c2fc000-4c300000 ---p 00000000 00:00 0 
+4c300000-4c303000 r--s 00009000 08:03 6292097    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/oauth.signpost/signpost-core/1.2.1.2/jars/signpost-core.jar
+4c303000-4c305000 r--s 00002000 08:03 5899954    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/com.typesafe.akka/akka-slf4j_2.10.0-RC1/2.1.0-RC1/bundles/akka-slf4j_2.10.0-RC1.jar
+4c305000-4c312000 r--s 00107000 08:02 2246704    /usr/lib/jvm/java-7-openjdk-common/jre/lib/rhino.jar
+4c312000-4c335000 r--s 0019a000 08:03 5900157    /home/peter/.emacs.d/ensime/lib/scalariform_2.9.1-0.1.1.jar
+4c335000-4c356000 r--s 00170000 08:03 5900151    /home/peter/.emacs.d/ensime/lib/org.scala-refactoring_2.9.2-SNAPSHOT-0.5.0-SNAPSHOT.jar
+4c356000-4c37f000 r--s 00423000 08:03 5900150    /home/peter/.emacs.d/ensime/lib/org.eclipse.jdt.core-3.6.0.v_A58.jar
+4c37f000-4c380000 ---p 00000000 00:00 0 
+4c380000-4c400000 rw-p 00000000 00:00 0          [stack:8146]
+4c400000-4c473000 rw-p 00000000 00:00 0 
+4c473000-4c500000 ---p 00000000 00:00 0 
+4c500000-4c501000 r--s 00003000 08:03 6029346    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/javax.transaction/jta/1.1/jars/jta.jar
+4c501000-4c502000 r--s 00002000 08:03 6422879    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.seleniumhq.selenium/selenium-chrome-driver/2.25.0/jars/selenium-chrome-driver.jar
+4c502000-4c504000 r--s 00012000 08:02 2234343    /usr/lib/jvm/java-7-openjdk-common/jre/lib/ext/zipfs.jar
+4c504000-4c505000 r--s 00002000 08:02 2232722    /usr/lib/jvm/java-7-openjdk-common/jre/lib/ext/dnsns.jar
+4c505000-4c507000 r--s 00006000 08:02 2231279    /usr/share/java/java-atk-wrapper.jar
+4c507000-4c512000 r--s 001fb000 08:02 2246703    /usr/lib/jvm/java-7-openjdk-common/jre/lib/charsets.jar
+4c512000-4c513000 ---p 00000000 00:00 0 
+4c513000-4c653000 rw-p 00000000 00:00 0          [stack:8145]
+4c653000-4c7cb000 rw-p 00000000 00:00 0 
+4c7cb000-4c88b000 rw-p 00000000 00:00 0 
+4c88b000-4ca03000 rw-p 00000000 00:00 0 
+4ca03000-4caff000 rw-p 00000000 00:00 0 
+4caff000-64aa0000 rw-p 00000000 00:00 0 
+64aa0000-93b00000 rw-p 00000000 00:00 0 
+93b00000-b3300000 rw-p 00000000 00:00 0 
+b3300000-b3303000 r--s 00032000 08:02 2234344    /usr/lib/jvm/java-7-openjdk-common/jre/lib/ext/sunjce_provider.jar
+b3303000-b3306000 r--s 0000f000 08:02 2232736    /usr/lib/jvm/java-7-openjdk-common/jre/lib/ext/pulse-java.jar
+b3306000-b3319000 rw-p 00000000 00:00 0 
+b3319000-b33c6000 rw-p 00000000 00:00 0 
+b33c6000-b3856000 rwxp 00000000 00:00 0 
+b3856000-b63c6000 rw-p 00000000 00:00 0 
+b63c6000-b63dc000 r-xp 00000000 08:02 1048812    /lib/i386-linux-gnu/libnsl-2.15.so
+b63dc000-b63dd000 r--p 00015000 08:02 1048812    /lib/i386-linux-gnu/libnsl-2.15.so
+b63dd000-b63de000 rw-p 00016000 08:02 1048812    /lib/i386-linux-gnu/libnsl-2.15.so
+b63de000-b63e0000 rw-p 00000000 00:00 0 
+b63e0000-b63e7000 r-xp 00000000 08:02 1048794    /lib/i386-linux-gnu/libnss_compat-2.15.so
+b63e7000-b63e8000 r--p 00006000 08:02 1048794    /lib/i386-linux-gnu/libnss_compat-2.15.so
+b63e8000-b63e9000 rw-p 00007000 08:02 1048794    /lib/i386-linux-gnu/libnss_compat-2.15.so
+b63e9000-b63eb000 r--s 00000000 08:03 6422826    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.scala-tools.testing/test-interface/0.5/jars/test-interface.jar
+b63eb000-b63ef000 r--s 00085000 08:02 2234342    /usr/lib/jvm/java-7-openjdk-common/jre/lib/ext/localedata.jar
+b63ef000-b63f2000 r--s 0003c000 08:02 2235670    /usr/lib/jvm/java-7-openjdk-common/jre/lib/ext/sunpkcs11.jar
+b63f2000-b63f7000 r--s 0004b000 08:02 2232721    /usr/lib/jvm/java-7-openjdk-common/jre/lib/jsse.jar
+b63f7000-b6400000 r--s 000bc000 08:02 2246714    /usr/lib/jvm/java-7-openjdk-common/jre/lib/resources.jar
+b6400000-b64f1000 rw-p 00000000 00:00 0 
+b64f1000-b6500000 ---p 00000000 00:00 0 
+b6500000-b6501000 r--s 00003000 08:03 6422955    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/org.seleniumhq.selenium/selenium-safari-driver/2.25.0/jars/selenium-safari-driver.jar
+b6501000-b6504000 r--s 00014000 08:02 2246705    /usr/lib/jvm/java-7-openjdk-common/jre/lib/jce.jar
+b6504000-b6509000 r--s 0004b000 08:02 2232721    /usr/lib/jvm/java-7-openjdk-common/jre/lib/jsse.jar
+b6509000-b6512000 r--s 000bc000 08:02 2246714    /usr/lib/jvm/java-7-openjdk-common/jre/lib/resources.jar
+b6512000-b652a000 r--s 0014e000 08:03 5900149    /home/peter/.emacs.d/ensime/lib/lucene-core-3.5.0.jar
+b652a000-b652b000 r--s 00003000 08:03 5900148    /home/peter/.emacs.d/ensime/lib/json-simple-1.1.jar
+b652b000-b6543000 r--s 00149000 08:03 5900147    /home/peter/.emacs.d/ensime/lib/ensime_2.9.2-0.9.8.1.jar
+b6543000-b6545000 r--s 0000d000 08:03 5900146    /home/peter/.emacs.d/ensime/lib/critbit-0.0.4.jar
+b6545000-b6547000 r--s 00004000 08:03 5900145    /home/peter/.emacs.d/ensime/lib/asm-tree-3.2.jar
+b6547000-b6549000 r--s 00007000 08:03 5900144    /home/peter/.emacs.d/ensime/lib/asm-commons-3.2.jar
+b6549000-b654a000 r--s 0000a000 08:03 5900143    /home/peter/.emacs.d/ensime/lib/asm-3.2.jar
+b654a000-b654c000 r--s 00012000 08:02 2234343    /usr/lib/jvm/java-7-openjdk-common/jre/lib/ext/zipfs.jar
+b654c000-b654d000 r--s 00002000 08:02 2232722    /usr/lib/jvm/java-7-openjdk-common/jre/lib/ext/dnsns.jar
+b654d000-b654f000 r--s 00006000 08:02 2231279    /usr/share/java/java-atk-wrapper.jar
+b654f000-b6552000 r--s 00032000 08:02 2234344    /usr/lib/jvm/java-7-openjdk-common/jre/lib/ext/sunjce_provider.jar
+b6552000-b6555000 r--s 0000f000 08:02 2232736    /usr/lib/jvm/java-7-openjdk-common/jre/lib/ext/pulse-java.jar
+b6555000-b6559000 r--s 00085000 08:02 2234342    /usr/lib/jvm/java-7-openjdk-common/jre/lib/ext/localedata.jar
+b6559000-b6561000 r-xp 00000000 08:02 786716     /usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/libzip.so
+b6561000-b6562000 r--p 00007000 08:02 786716     /usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/libzip.so
+b6562000-b6563000 rw-p 00008000 08:02 786716     /usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/libzip.so
+b6563000-b656b000 rw-s 00000000 08:02 1310776    /tmp/hsperfdata_peter/8143
+b656b000-b6576000 r-xp 00000000 08:02 1048796    /lib/i386-linux-gnu/libnss_files-2.15.so
+b6576000-b6577000 r--p 0000a000 08:02 1048796    /lib/i386-linux-gnu/libnss_files-2.15.so
+b6577000-b6578000 rw-p 0000b000 08:02 1048796    /lib/i386-linux-gnu/libnss_files-2.15.so
+b6578000-b6582000 r-xp 00000000 08:02 1048800    /lib/i386-linux-gnu/libnss_nis-2.15.so
+b6582000-b6583000 r--p 00009000 08:02 1048800    /lib/i386-linux-gnu/libnss_nis-2.15.so
+b6583000-b6584000 rw-p 0000a000 08:02 1048800    /lib/i386-linux-gnu/libnss_nis-2.15.so
+b6584000-b65ab000 r-xp 00000000 08:02 786702     /usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/libjava.so
+b65ab000-b65ac000 r--p 00026000 08:02 786702     /usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/libjava.so
+b65ac000-b65ad000 rw-p 00027000 08:02 786702     /usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/libjava.so
+b65ad000-b65b4000 r-xp 00000000 08:02 1048799    /lib/i386-linux-gnu/librt-2.15.so
+b65b4000-b65b5000 r--p 00006000 08:02 1048799    /lib/i386-linux-gnu/librt-2.15.so
+b65b5000-b65b6000 rw-p 00007000 08:02 1048799    /lib/i386-linux-gnu/librt-2.15.so
+b65b6000-b65b9000 ---p 00000000 00:00 0 
+b65b9000-b66b7000 rw-p 00000000 00:00 0          [stack:8144]
+b66b7000-b66d3000 r-xp 00000000 08:02 1049434    /lib/i386-linux-gnu/libgcc_s.so.1
+b66d3000-b66d4000 r--p 0001b000 08:02 1049434    /lib/i386-linux-gnu/libgcc_s.so.1
+b66d4000-b66d5000 rw-p 0001c000 08:02 1049434    /lib/i386-linux-gnu/libgcc_s.so.1
+b66d5000-b66ff000 r-xp 00000000 08:02 1048803    /lib/i386-linux-gnu/libm-2.15.so
+b66ff000-b6700000 r--p 00029000 08:02 1048803    /lib/i386-linux-gnu/libm-2.15.so
+b6700000-b6701000 rw-p 0002a000 08:02 1048803    /lib/i386-linux-gnu/libm-2.15.so
+b6701000-b67dd000 r-xp 00000000 08:02 1966430    /usr/lib/i386-linux-gnu/libstdc++.so.6.0.17
+b67dd000-b67de000 ---p 000dc000 08:02 1966430    /usr/lib/i386-linux-gnu/libstdc++.so.6.0.17
+b67de000-b67e2000 r--p 000dc000 08:02 1966430    /usr/lib/i386-linux-gnu/libstdc++.so.6.0.17
+b67e2000-b67e3000 rw-p 000e0000 08:02 1966430    /usr/lib/i386-linux-gnu/libstdc++.so.6.0.17
+b67e3000-b67ea000 rw-p 00000000 00:00 0 
+b67ea000-b70dc000 r-xp 00000000 08:02 786726     /usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/server/libjvm.so
+b70dc000-b7123000 r--p 008f1000 08:02 786726     /usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/server/libjvm.so
+b7123000-b7137000 rw-p 00938000 08:02 786726     /usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/server/libjvm.so
+b7137000-b7555000 rw-p 00000000 00:00 0 
+b7555000-b756c000 r-xp 00000000 08:02 1049583    /lib/i386-linux-gnu/libz.so.1.2.7
+b756c000-b756d000 r--p 00016000 08:02 1049583    /lib/i386-linux-gnu/libz.so.1.2.7
+b756d000-b756e000 rw-p 00017000 08:02 1049583    /lib/i386-linux-gnu/libz.so.1.2.7
+b756e000-b7585000 r-xp 00000000 08:02 1048801    /lib/i386-linux-gnu/libpthread-2.15.so
+b7585000-b7586000 r--p 00016000 08:02 1048801    /lib/i386-linux-gnu/libpthread-2.15.so
+b7586000-b7587000 rw-p 00017000 08:02 1048801    /lib/i386-linux-gnu/libpthread-2.15.so
+b7587000-b7589000 rw-p 00000000 00:00 0 
+b7589000-b758c000 r-xp 00000000 08:02 1048807    /lib/i386-linux-gnu/libdl-2.15.so
+b758c000-b758d000 r--p 00002000 08:02 1048807    /lib/i386-linux-gnu/libdl-2.15.so
+b758d000-b758e000 rw-p 00003000 08:02 1048807    /lib/i386-linux-gnu/libdl-2.15.so
+b758e000-b7731000 r-xp 00000000 08:02 1048792    /lib/i386-linux-gnu/libc-2.15.so
+b7731000-b7732000 ---p 001a3000 08:02 1048792    /lib/i386-linux-gnu/libc-2.15.so
+b7732000-b7734000 r--p 001a3000 08:02 1048792    /lib/i386-linux-gnu/libc-2.15.so
+b7734000-b7735000 rw-p 001a5000 08:02 1048792    /lib/i386-linux-gnu/libc-2.15.so
+b7735000-b7739000 rw-p 00000000 00:00 0 
+b7739000-b773a000 r--s 00003000 08:03 5899886    /home/peter/knowledge_base/OnlineCources/Scala/play-2.1-RC1/repository/local/com.novocode/junit-interface/0.8/jars/junit-interface.jar
+b773a000-b773d000 r--s 0003c000 08:02 2235670    /usr/lib/jvm/java-7-openjdk-common/jre/lib/ext/sunpkcs11.jar
+b773d000-b773e000 r--p 0046c000 08:02 1973544    /usr/lib/locale/locale-archive
+b773e000-b773f000 rw-p 00000000 00:00 0 
+b773f000-b7740000 r--p 00000000 00:00 0 
+b7740000-b774d000 r-xp 00000000 08:02 786715     /usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/libverify.so
+b774d000-b774e000 ---p 0000d000 08:02 786715     /usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/libverify.so
+b774e000-b774f000 r--p 0000d000 08:02 786715     /usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/libverify.so
+b774f000-b7750000 rw-p 0000e000 08:02 786715     /usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/libverify.so
+b7750000-b775d000 r-xp 00000000 08:02 786704     /usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/jli/libjli.so
+b775d000-b775e000 r--p 0000c000 08:02 786704     /usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/jli/libjli.so
+b775e000-b775f000 rw-p 0000d000 08:02 786704     /usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/jli/libjli.so
+b775f000-b7761000 rw-p 00000000 00:00 0 
+b7761000-b7762000 r-xp 00000000 00:00 0          [vdso]
+b7762000-b7782000 r-xp 00000000 08:02 1048804    /lib/i386-linux-gnu/ld-2.15.so
+b7782000-b7783000 r--p 0001f000 08:02 1048804    /lib/i386-linux-gnu/ld-2.15.so
+b7783000-b7784000 rw-p 00020000 08:02 1048804    /lib/i386-linux-gnu/ld-2.15.so
+b7784000-bf784000 rw-p 00000000 00:00 0 
+bf7e0000-bf801000 rw-p 00000000 00:00 0          [stack]
+bf801000-bff01000 rw-p 00000000 00:00 0 
+
+VM Arguments:
+jvm_args: -Xbootclasspath/a:scala-library.jar:scala-compiler.jar -Xms256M -Xmx1512M -XX:PermSize=128m -Xss1M -Dfile.encoding=UTF-8 
+java_command: org.ensime.server.Server /tmp/ensime_port.8123
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+SHELL=/bin/bash
+DISPLAY=:0.0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x756f80], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x756f80], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x5f3cd0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: [libjvm.so+0x5f3cd0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGXFSZ: [libjvm.so+0x5f3cd0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x5f3cd0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x5f3b80], sa_mask[0]=0x00000000, sa_flags=0x10000004
+SIGHUP: [libjvm.so+0x5f3f90], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGINT: [libjvm.so+0x5f3f90], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGTERM: [libjvm.so+0x5f3f90], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGQUIT: [libjvm.so+0x5f3f90], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+
+
+---------------  S Y S T E M  ---------------
+
+OS:Ubuntu 12.10 (quantal)
+uname:Linux 3.5.0-18-generic #29-Ubuntu SMP Fri Oct 19 10:27:31 UTC 2012 i686
+libc:glibc 2.15 NPTL 2.15 
+rlimit: STACK 8192k, CORE 0k, NPROC 24050, NOFILE 4096, AS infinity
+load average:10,17 10,87 8,67
+
+/proc/meminfo:
+MemTotal:        3093904 kB
+MemFree:          169916 kB
+Buffers:            2576 kB
+Cached:           228396 kB
+SwapCached:       262452 kB
+Active:          1896504 kB
+Inactive:         897272 kB
+Active(anon):    1840268 kB
+Inactive(anon):   841340 kB
+Active(file):      56236 kB
+Inactive(file):    55932 kB
+Unevictable:       31284 kB
+Mlocked:           31284 kB
+HighTotal:       2222444 kB
+HighFree:          27892 kB
+LowTotal:         871460 kB
+LowFree:          142024 kB
+SwapTotal:       3905532 kB
+SwapFree:        1209204 kB
+Dirty:              6300 kB
+Writeback:             0 kB
+AnonPages:       2361700 kB
+Mapped:            71776 kB
+Shmem:            112920 kB
+Slab:              38948 kB
+SReclaimable:      19340 kB
+SUnreclaim:        19608 kB
+KernelStack:        5728 kB
+PageTables:        33080 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     5452484 kB
+Committed_AS:   10880140 kB
+VmallocTotal:     122880 kB
+VmallocUsed:       11692 kB
+VmallocChunk:     110560 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:       10232 kB
+DirectMap2M:      903168 kB
+
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 6 model 15 stepping 13, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, tsc
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 15
+model name	: Intel(R) Pentium(R) Dual  CPU  T2390  @ 1.86GHz
+stepping	: 13
+microcode	: 0xa3
+cpu MHz		: 1867.000
+cache size	: 1024 KB
+physical id	: 0
+siblings	: 2
+core id		: 0
+cpu cores	: 2
+apicid		: 0
+initial apicid	: 0
+fdiv_bug	: no
+hlt_bug		: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 10
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe nx lm constant_tsc arch_perfmon pebs bts aperfmperf pni dtes64 monitor ds_cpl est tm2 ssse3 cx16 xtpr pdcm lahf_lm dtherm
+bogomips	: 3724.61
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 15
+model name	: Intel(R) Pentium(R) Dual  CPU  T2390  @ 1.86GHz
+stepping	: 13
+microcode	: 0xa3
+cpu MHz		: 1867.000
+cache size	: 1024 KB
+physical id	: 0
+siblings	: 2
+core id		: 1
+cpu cores	: 2
+apicid		: 1
+initial apicid	: 1
+fdiv_bug	: no
+hlt_bug		: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 10
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe nx lm constant_tsc arch_perfmon pebs bts aperfmperf pni dtes64 monitor ds_cpl est tm2 ssse3 cx16 xtpr pdcm lahf_lm dtherm
+bogomips	: 3724.61
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 3093904k(169916k free), swap 3905532k(1209204k free)
+
+vm_info: OpenJDK Server VM (23.2-b09) for linux-x86 JRE (1.7.0_09-b30), built on Oct 24 2012 18:03:08 by "buildd" with gcc 4.7.2
+
+time: Wed Nov 21 20:25:44 2012
+elapsed time: 484 seconds
+
