@@ -34,6 +34,7 @@
                '("\\.py\\'" flymake-pylint-init)))
 
 (add-hook 'find-file-hook 'flymake-find-file-hook)
+(epy-setup-checker "flake8 --max-complexity 12 %f")
 
 (epy-django-snippets)
 (epy-setup-ipython)
@@ -89,3 +90,4 @@ if breakpoints are present in `python-mode' files"
             ;; set COMINT argument to `t'.
             (ad-set-arg 1 t))))))
 
+(add-hook 'python-mode-hook 'jedi:setup)
