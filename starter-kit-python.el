@@ -34,7 +34,7 @@
                '("\\.py\\'" flymake-pylint-init)))
 
 (add-hook 'find-file-hook 'flymake-find-file-hook)
-(epy-setup-checker "flake8 --max-complexity 12 %f")
+(epy-setup-checker "flint %f")
 
 (epy-django-snippets)
 (epy-setup-ipython)
@@ -65,7 +65,7 @@
  
 (add-hook 'python-mode-hook 'python--add-debug-highlight)
  
-(defvar python--pdb-breakpoint-string "import pudb; pudb.set_trace() ## DEBUG ##"
+(defvar python--pdb-breakpoint-string "import ipdb; ipdb.set_trace() ## DEBUG ##"
   "Python breakpoint string used by `python-insert-breakpoint'")
  
 (defun python-insert-breakpoint ()

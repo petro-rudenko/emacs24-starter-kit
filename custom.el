@@ -19,6 +19,8 @@
 (fset 'yes-or-no-p 'y-or-n-p) 
 (setq file-name-coding-system 'utf-8)
 
+(custom-set-variables
+ '(icomplete-mode t))
 
 ;;Line number column
 (autoload 'linum-mode "linum" "toggle line numbers on/off" t) 
@@ -34,3 +36,4 @@ browse-url-browser-function 'browse-url-generic)
 (starter-kit-load "python")
 (starter-kit-load "scala")
 (desktop-save-mode 0)
+(global-undo-tree-mode)
