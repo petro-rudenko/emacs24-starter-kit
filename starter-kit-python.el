@@ -6,9 +6,6 @@
                    (or load-file-name (buffer-file-name))))
 (setq pythonEmacsDir (concat dotfiles-dir "python/"))
 (add-to-list `load-path pythonEmacsDir)
-(load (concat pythonEmacsDir "mako-mode/mmm-mako.el"))
-(add-to-list 'auto-mode-alist '("\\.mako\\'" . html-mode))
-(mmm-add-mode-ext-class 'html-mode "\\.mako\\'" 'mako)
 
 
 (load-file (concat pythonEmacsDir "emacs-for-python/epy-init.el"))

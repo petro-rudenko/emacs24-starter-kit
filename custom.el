@@ -16,24 +16,39 @@
  '(inhibit-startup-screen t)
  '(scroll-bar-mode (quote right)))
 
-(fset 'yes-or-no-p 'y-or-n-p) 
+(fset 'yes-or-no-p 'y-or-n-p)
 (setq file-name-coding-system 'utf-8)
 
 (custom-set-variables
  '(icomplete-mode t))
 
 ;;Line number column
-(autoload 'linum-mode "linum" "toggle line numbers on/off" t) 
+(autoload 'linum-mode "linum" "toggle line numbers on/off" t)
 (global-linum-mode)
 
-(setq auto-mode-alist (cons '("\\.m$" . octave-mode) auto-mode-alist)) 
+(setq auto-mode-alist (cons '("\\.m$" . octave-mode) auto-mode-alist))
 (setq browse-url-generic-program (executable-find "google-chrome")
 browse-url-browser-function 'browse-url-generic)
 
-(require `ahg)
-(require 'color-theme-gruber-darker) 
+(require 'color-theme-gruber-darker)
 (color-theme-gruber-darker)
 (starter-kit-load "python")
 (starter-kit-load "scala")
 (desktop-save-mode 0)
 (global-undo-tree-mode)
+
+(defun temp-buf ()
+  (interactive)
+  (switch-to-buffer (make-temp-name "scratch")))
+
+(autoload 'puppet-mode "puppet-mode" "Major mode for editing puppet manifests")
+
+(add-to-list 'auto-mode-alist '("\\.pp$" . puppet-mode))
+(add-hook 'after-init-hook #'global-flycheck-modes)
+(load  "python/mako-mode/mmm-mako.el")
+(add-to-list 'auto-mode-alist '("\\.mako\\'" . html-mode))
+(mmm-add-mode-ext-class 'html-mode "\\.mako\\'" 'mako)
+(setq erc-hide-list '("JOIN" "PART" "QUIT"))
+(tool-bar-mode -1)
+(add-hook 'after-init-hook 'global-company-mode)
+;(set-face-background 'hl-line "#056900")
