@@ -51,3 +51,5 @@ secret.org
 .*~
 agent/*
 ac-comphist.dat
+ido.last
+recentf
