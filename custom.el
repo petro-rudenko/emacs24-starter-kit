@@ -42,10 +42,6 @@ browse-url-browser-function 'browse-url-generic)
 (desktop-save-mode 0)
 (global-undo-tree-mode)
 
-(defun temp-buf ()
-  (interactive)
-  (switch-to-buffer (make-temp-name "scratch")))
-
 (autoload 'puppet-mode "puppet-mode" "Major mode for editing puppet manifests")
 
 (add-to-list 'auto-mode-alist '("\\.pp$" . puppet-mode))
@@ -75,3 +71,5 @@ browse-url-browser-function 'browse-url-generic)
 (setq twittering-icon-mode t)
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
+(smartparens-global-mode t)
+(add-hook 'html-mode-hook 'turn-off-auto-fill)

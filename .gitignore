@@ -53,3 +53,4 @@ agent/*
 ac-comphist.dat
 ido.last
 recentf
+session.*
