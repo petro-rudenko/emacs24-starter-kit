@@ -1,7 +1,4 @@
 ;; Load the ensime lisp code...
-(setq dotfiles-dir (file-name-directory
-                   (or load-file-name (buffer-file-name))))
-(add-to-list 'load-path (concat dotfiles-dir "ensime/elisp/"))
 (require 'ensime)
 (require 'scala-mode2)
 ;; This step causes the ensime-mode to be started whenever

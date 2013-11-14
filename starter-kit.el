@@ -19,7 +19,7 @@
 (package-initialize)
 
 (defvar starter-kit-packages
-  (list 'yasnippet-bundle)
+  '(ahg align-cljlet clojure-mode angular-snippets dash s auctex bash-completion clojure-cheatsheet cider pkg-info epl dash dash clojure-mode helm clojure-snippets yasnippet clojurescript-mode closure-lint-mode coffee-mode color-theme company dired-single durendal paredit slime clojure-mode ecb ensime scala-mode2 auto-complete popup popup dash s ess expand-region flycheck pkg-info epl dash f dash s dash s flymake-coffee flymake-easy flymake-easy flymake-less less-css-mode fringe-helper geiser helm jedi auto-complete popup epc ctable concurrent deferred less-css-mode lua-mode magit git-rebase-mode git-commit-mode markup mmm-mako mmm-mode mmm-mode multiple-cursors mustache-mode paredit pig-mode pkg-info epl dash popup puppet-mode pyvirtualenv quack rainbow-delimiters rainbow-mode s scala-mode2 slime smartparens dash sml-mode sml-modeline tuareg caml twitter twittering-mode undo-tree virtualenv web-mode yasnippet yasnippet-bundle)
   "Libraries that should be installed by default.")
 
 (unless package-archive-contents
